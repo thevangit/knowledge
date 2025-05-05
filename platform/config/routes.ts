@@ -29,6 +29,43 @@ export default [
     component: './Welcome',
   },
   {
+    path: '/product',
+    name: 'product',
+    icon: 'cloudUpload',
+    routes: [
+      {
+        path: '/product/source',
+        name: 'source',
+        routes: [
+          {
+            path: '/product/source',
+            redirect: '/product/source/overview',
+          },
+          {
+            path: '/product/source/overview',
+            name: 'overview',
+            component: './Product/Source'
+          },
+          {
+            path: '/product/source/crawl',
+            name: 'crawl',
+            component: './Product/Source/Crawl',
+          },
+          {
+            path: '/product/source/upload',
+            name: 'upload',
+            component: './Product/Source/Upload',
+          },
+          {
+            path: '/product/source/create',
+            name: 'create',
+            component: './Product/Source/components/OnlineEditor',
+          },
+        ]
+      },
+    ]
+  },
+  {
     path: '/admin',
     name: 'admin',
     icon: 'crown',
